@@ -15,6 +15,15 @@ body {
     padding: 32px 24px 24px 24px;
 }
 
+#container #navigation {
+    z-index: 10;
+    top: 0;
+    background-color: #aaa;
+    height: 64px;
+    position: fixed;
+    width:100%;
+}
+
 /* Content styling: fonts and stuff */
 #container .content *{
     margin-bottom: 16px
@@ -43,3 +52,4 @@ body {
     line-height: 1.75em;
     font-weight: 300;
 }
+

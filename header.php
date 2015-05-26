@@ -26,6 +26,8 @@
 <html>
 	<head>
 		<?php
+		// Error reporting for development purposes
+		error_reporting('E_ALL');
 		/*	Handling the correct metadata and Importing 	*
 		*	stylesheets.									*/ ?>
 		<meta charset="utf-8">
@@ -37,5 +39,5 @@
 	</head>
 	<body>
 		<div id="container">
-			<div class="content">
-				<p>This is the main Header content.</p>
+				<div class="content">
+					<p>This is the main Header content.</p>
