@@ -32,9 +32,10 @@
 		<meta name="viewport" content="width=device-width">
 		<title>Roam</title>
 		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/Open%20Sans/stylesheet.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
 		<div id="container">
-			<div id="content">
+			<div class="content">
 				<p>This is the main Header content.</p>

@@ -17,7 +17,7 @@
 
 			<!-- #container -->
 			</div>
-		<!-- #content -->
+		<!-- .content -->
 		</div>
 	</body>
 </html>
