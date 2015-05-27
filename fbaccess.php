@@ -11,9 +11,7 @@
 *				END OF DOCUMENT INFO 				*
 *													*
 ****************************************************/
-session_start();
-
-error_reporting('E_ALL');
+include 'header.php';
 
 //Import quired stuff from the Facebook SDK
 require 'facebook-sdk/autoload.php';
@@ -35,9 +33,9 @@ $permissions = array(
     'user_birthday'
 );
 
-FacebookSession::setDefaultApplication('1435758203410724', '49fb3f80860b300eb954c8a6d8ebd834');
+FacebookSession::setDefaultApplication('1436086966711181', '1a92c736d9a886bbbc93bee4e8e3d818');
 
-$helper = new FacebookRedirectLoginHelper( "http://roambackpacking.com/fbaccess.php" );
+$helper = new FacebookRedirectLoginHelper( "http://roam.localhost/fbaccess.php" );
  
 // Authorize the user.
 try {
@@ -62,7 +60,7 @@ if ( isset( $session ) ) {
     // Retrieve & store the access token in a session.
     $_SESSION['access_token'] = $session->getToken();
  
-    $logoutURL = $helper->getLogoutUrl( $session, 'http://roambackpacking.com/logout.php' );
+    $logoutURL = $helper->getLogoutUrl( $session, 'http://roam.localhost/logout.php' );
 
 
  
