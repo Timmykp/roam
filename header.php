@@ -26,15 +26,18 @@
 <html>
 	<head>
 		<?php
+		// Error reporting for development purposes
+		error_reporting('E_ALL');
 		/*	Handling the correct metadata and Importing 	*
 		*	stylesheets.									*/ ?>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 		<title>Roam</title>
 		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/Open%20Sans/stylesheet.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
 		<div id="container">
-			<div id="content">
-				<p>This is the main Header content.</p>
+				<div class="content">
+					<p>This is the main Header content.</p>

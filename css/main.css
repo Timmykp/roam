@@ -5,5 +5,51 @@
 
 body {
 	color: #000;
-	font: 1em/1.5 "Helvetica Neue", sans-serif;
+	font: 1em/1.5 "Open Sans", Arial, sans-serif;
 }
+
+#container {
+	position: relative;
+    max-width: 1300px;
+    margin: 64px auto 0 auto;
+    padding: 32px 24px 24px 24px;
+}
+
+#container #navigation {
+    z-index: 10;
+    top: 0;
+    background-color: #aaa;
+    height: 64px;
+    position: fixed;
+    width:100%;
+}
+
+/* Content styling: fonts and stuff */
+#container .content *{
+    margin-bottom: 16px
+}
+
+#container .content h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+#container .content h2 {
+    font-size: 1.5em;
+}
+#container .content h3 {
+    font-size: 1.25em;
+}
+#container .content h4 {
+    font-size: 1.25em;
+    font-style: italic;
+}
+#container .content h5 {
+    font-size: 1.1em;
+}
+
+#container .content p, #container .content ol, #container .content ul {
+    font-size: 1em;
+    line-height: 1.75em;
+    font-weight: 300;
+}
+
