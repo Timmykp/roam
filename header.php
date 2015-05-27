@@ -42,5 +42,5 @@ error_reporting('E_ALL');
 	</head>
 	<body>
 		<div id="container">
-			<div id="content">
+			<div class="content">
 				<p>This is the main Header content.</p>
