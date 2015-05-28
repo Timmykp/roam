@@ -3,7 +3,7 @@
 *					DOCUMENT INFO 					*
 *													*
 *	This is the functions file for the Roam 		*
-*	Project. Functions that are executed more then 	*
+*	Project. Functions that are executed more than 	*
 *	once should be added to this file. This way can *
 *	adhere to the DRY principles (Don't Repeat 		*
 *	Yourself). Functions have been documented using *
