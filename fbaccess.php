@@ -13,7 +13,7 @@
 ****************************************************/
 include 'header.php';
 
-//Import quired stuff from the Facebook SDK
+//Import required stuff from the Facebook SDK
 require 'facebook-sdk/autoload.php';
 
 use Facebook\FacebookSession;
