@@ -18,26 +18,38 @@
 *													*
 ****************************************************/
 
-/*	Include all the neccesary files to be used on 	*
-*	every webpage									*/
+//	Start the session. Required for Facebook Authentication saving
+//	Note: Session must be started before any content is received.
+session_start();
+
+error_reporting('E_ALL');
+
+//	Include all the neccesary files to be used on every webpage
+include 'functions.php';
+
 
 /*	Opening the proper HTML Body declarations 		*/ ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<?php
-		// Error reporting for development purposes
-		error_reporting('E_ALL');
 		/*	Handling the correct metadata and Importing 	*
 		*	stylesheets.									*/ ?>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
-		<title>Roam</title>
+		<title><?php echo getDocumentTitle(); ?></title>
 		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/Open%20Sans/stylesheet.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
+		<div id="navigation">
+				<div id="masthead">
+						<p>Roam</p>
+				</div>
+				<div id="primary-menu">
+						<p>=</p>
+				</div>
+		</div>
 		<div id="container">
-				<div class="content">
-					<p>This is the main Header content.</p>
+			<div class="content">
+				<p>This is the main Header content.</p>

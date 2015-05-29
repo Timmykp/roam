@@ -11,11 +11,9 @@
 *				END OF DOCUMENT INFO 				*
 *													*
 ****************************************************/
-session_start();
+include 'header.php';
 
-error_reporting('E_ALL');
-
-//Import quired stuff from the Facebook SDK
+//Import required stuff from the Facebook SDK
 require 'facebook-sdk/autoload.php';
 
 use Facebook\FacebookSession;
@@ -35,9 +33,9 @@ $permissions = array(
     'user_birthday'
 );
 
-FacebookSession::setDefaultApplication('1435758203410724', '49fb3f80860b300eb954c8a6d8ebd834');
+FacebookSession::setDefaultApplication('1436086966711181', '1a92c736d9a886bbbc93bee4e8e3d818');
 
-$helper = new FacebookRedirectLoginHelper( "http://roambackpacking.com/fbaccess.php" );
+$helper = new FacebookRedirectLoginHelper( "http://roam.localhost/fbaccess.php" );
  
 // Authorize the user.
 try {
@@ -62,17 +60,17 @@ if ( isset( $session ) ) {
     // Retrieve & store the access token in a session.
     $_SESSION['access_token'] = $session->getToken();
  
-    $logoutURL = $helper->getLogoutUrl( $session, 'http://roambackpacking.com/logout.php' );
+    $logoutURL = $helper->getLogoutUrl( $session, 'http://roam.localhost/logout.php' );
 
 
  
     // Logged in
-    echo 'Successfully logged in! <a href="' . $logoutURL . '">Logout</a><br>';
+    echo '<p>Successfully logged in! <a href="' . $logoutURL . '">Logout</a></p>';
 } else {
  
     // Generate the login URL for Facebook authentication.
     $loginUrl = $helper->getLoginUrl();
-    echo '<a href="' . $loginUrl . '">Login</a>';
+    echo '<p><a href="' . $loginUrl . '">Login</a></p>';
 }
 
 
@@ -83,10 +81,10 @@ $request = ( new FacebookRequest( $session, 'GET', '/me' ) )->execute();
 $user = $request->getGraphObject()->asArray();
 
 echo "<h1>Account Info</h1><br>";
-echo "<b>Voornaam: </b>" . $user['first_name'] . "<br>";
-echo "<b>Achternaam: </b>" . $user['last_name'] . "<br>";
-echo "<b>Geslacht: </b>" . $user['gender'] . "<br>";
-echo "<b>Profiel URL: </b><a href='" . $user['link'] . "'>link</a><br><br>";
+echo "<p><b>Voornaam: </b>" . $user['first_name'] . "</p>";
+echo "<p><b>Achternaam: </b>" . $user['last_name'] . "</p>";
+echo "<p><b>Geslacht: </b>" . $user['gender'] . "</p>";
+echo "<p><b>Profiel URL: </b><a href='" . $user['link'] . "'>link</a></p>";
 
 // Get User’s Profile Picture
 $request = ( new FacebookRequest( $session, 'GET', '/me/picture?type=large&redirect=false' ) )->execute();
@@ -94,4 +92,4 @@ $request = ( new FacebookRequest( $session, 'GET', '/me/picture?type=large&redir
 // Get response as an array
 $picture = $request->getGraphObject()->asArray();
  
-echo "<img src='" . $picture['url'] . "'>";
+echo "<p><img src='" . $picture['url'] . "'></p>";

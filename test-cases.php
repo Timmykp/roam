@@ -1,6 +1,7 @@
 <?php
 include 'header.php';
-session_destroy();
-header('Location: /' );
+
+//You can test some cases in this file.
+
 include 'footer.php';
 ?>
