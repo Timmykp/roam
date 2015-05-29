@@ -19,5 +19,8 @@
 			</div>
 		<!-- .content --->
 		</div>
+        <div id="footer">
+            © 2015 ROAM
+        </div>
 	</body>
 </html>
