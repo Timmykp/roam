@@ -69,17 +69,17 @@ body {
     margin-top: 16px;
 }
 
-.profilebutton {
+.button {
     width: 40px;
     position: absolute;
     top: 12px;
+}
+
+.profilebutton {
     right: 16px;
 }
 
 .homebutton {
-    width: 40px;
-    position: absolute;
-    top: 12px;
     left: 16px;
 }
 

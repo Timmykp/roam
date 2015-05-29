@@ -47,8 +47,8 @@ include 'functions.php';
             <div id="masthead">
                 <img class="logo" src="img/logoroam-white.png" alt="ROAM logo" title="ROAM logo">
             <div id="primary-menu">
-				<img class="profilebutton" src="img/profilebutton.png" alt="Profile" title="Profile">
-                <img class="homebutton" src="img/homebutton.png" alt="Home" title="Home">
+				<img class="button profilebutton" src="img/profilebutton.png" alt="Profile" title="Profile">
+                <img class="button homebutton" src="img/homebutton.png" alt="Home" title="Home">
             </div>
 <!--
             <div id="menu-home">

@@ -20,7 +20,9 @@
 		<!-- .content --->
 		</div>
         <div id="sidebar">
-            stuffs
+            <img class="logo" src="img/homebutton.png" alt="ROAM logo" title="ROAM logo">
+            <img class="logo" src="img/homebutton.png" alt="ROAM logo" title="ROAM logo">
+            <img class="logo" src="img/homebutton.png" alt="ROAM logo" title="ROAM logo">
         </div>
         <div id="footer">
             © 2015 ROAM
