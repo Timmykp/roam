@@ -44,12 +44,19 @@ require_once 'functions.php';
 	</head>
 	<body>
 		<div id="navigation">
-				<div id="masthead">
-						<p>Roam</p>
-				</div>
-				<div id="primary-menu">
-						<p>=</p>
-				</div>
+            <div id="masthead">
+                <img class="logo" src="img/logoroam-white.png" alt="ROAM logo" title="ROAM logo">
+            <div id="primary-menu">
+				<img class="button profilebutton" src="img/profilebutton.png" alt="Profile" title="Profile">
+                <img class="button homebutton" src="img/homebutton.png" alt="Home" title="Home">
+            </div>
+<!--
+            <div id="menu-home">
+				<img class="headerbutton" src="img/profilebutton.png" alt="Profile" title="Profile">
+            </div>
+-->
+            </div>
+
 		</div>
 		<div id="container">
 			<div class="content">

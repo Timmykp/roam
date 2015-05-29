@@ -18,24 +18,19 @@ body {
 #navigation {
     z-index: 10;
     top: 0;
-    background-color: #aaa;
+    background-color: #e65100;
     height: 64px;
     position: fixed;
     width:100%;
 }
 
 #navigation #masthead {
-    float: left;
-    margin-left: 33.333%;
-    margin-top: auto;
-    margin-bottom: auto;
+    text-align: center;
+    position: relative;
 }
 
 #navigation #primary-menu {
-    float: right;
-    padding-right: 1em;
-    margin-top: auto;
-    margin-bottom: auto;
+
 }
 
 /* Content styling: fonts and stuff */
@@ -67,3 +62,42 @@ body {
     font-weight: 300;
 }
 
+/*Logo en button classes in the header*/
+.logo {
+    width: 73px;
+    display: inline-block;
+    margin-top: 16px;
+}
+
+.button {
+    width: 40px;
+    position: absolute;
+    top: 12px;
+}
+
+.profilebutton {
+    right: 16px;
+}
+
+.homebutton {
+    left: 16px;
+}
+
+/*Footer css*/
+#footer {
+    width:100%;
+    height: 50px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    text-align: center;
+}
+#sidebar {
+    width: 307px;
+    height: 100%;
+    position: fixed;
+    top: 64px;
+    left:0;
+    background-color: palegoldenrod;
+
+}

@@ -19,5 +19,13 @@
 			</div>
 		<!-- .content --->
 		</div>
+        <div id="sidebar">
+            <img class="logo" src="img/homebutton.png" alt="ROAM logo" title="ROAM logo">
+            <img class="logo" src="img/homebutton.png" alt="ROAM logo" title="ROAM logo">
+            <img class="logo" src="img/homebutton.png" alt="ROAM logo" title="ROAM logo">
+        </div>
+        <div id="footer">
+            © 2015 ROAM
+        </div>
 	</body>
 </html>
