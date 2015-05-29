@@ -3,7 +3,7 @@
 *					DOCUMENT INFO 					*
 *													*
 *	This is the functions file for the Roam 		*
-*	Project. Functions that are executed more than 	*
+*	Project. Functions that are executed more then 	*
 *	once should be added to this file. This way can *
 *	adhere to the DRY principles (Don't Repeat 		*
 *	Yourself). Functions have been documented using *
@@ -37,4 +37,36 @@ function getDocumentTitle(){
 				($base == "index")							//Returned when loading root/index.php
 						? "Home" : $base;
 }
+
+/*
+*	Function to hash any password using the Eskblowfish algorithm
+*	@param String strPlainText 	- The password to be hashed
+*	@return String 		 		- The hash of the password
+*/
+function hashPassword($strPlainText) {
+ 
+  if (CRYPT_SHA512 != 1) {
+    throw new Exception('Hashing mechanism not supported.');
+  }
+ 
+  return crypt($strPlainText, '$6$rounds=50000$iopgcjquyrtfslpt$');
+ 
+}
+
+
+/*
+* Function that validates a password against a hash
+* @param String strPlainText 	- The password to be checked against the hash
+* @param String strHash 	 	- The hash that the password is checked against.
+* @return Boolean 				- The result of the validation.
+* Example: You could check an entered password against the hash in the database.
+* This will determine if the user entered a correct password for the user.
+*/
+function validatePassword($strPlainText, $strHash){
+  if (CRYPT_SHA512 != 1) {
+    throw new Exception('Hashing mechanism not supported.');
+  }
+ 
+  return (crypt($strPlainText, $strHash) == $strHash) ? true : false;
+ }
 ?>
