@@ -38,6 +38,58 @@ function getDocumentTitle(){
 						? "Home" : $base;
 }
 
+
+/*
+* Function to register an account
+* @param String fName 			- The first name of the user
+* @param String lName 			- The last name of the user
+* @param String hashedPassword 	- The hash of the entered password
+* @param String email 			- The email of the user, used for login
+* @param String birthdate 		- The birthday of the user, following mysql database format: Y-m-d
+* @param String gender 			- The gender of the user
+* @param String country 		- The nationality of the user
+* @param String facebookID 		- The facebookID of the user. Used when registering a user that logged in through Facebook
+* 								  for the first time.
+*/
+function registerAccount($fName, $lName, $hashedPassword, $email, $birthdate, $gender, $country, $facebookID){
+	$db = new databaseHandler();
+	$status = "active";
+	$currentDate = date('Y-m-d');
+	if($facebookID == "") {
+		$facebookID = "NULL";
+	}
+
+	$query = 	"INSERT INTO account(klant_voornaam, klant_achternaam, klant_wachtwoord, klant_email, klant_geboortedatum,
+									klant_geslacht, klant_nationaliteit, facebook_ID, klant_registratie_datum, klant_status) 
+				VALUES (	'".$fName."', 
+							'".$lName."',
+							'".$hashedPassword."', 
+							'".$email."',
+							'".$birthdate."',
+							'".$gender."',
+							'".$country."',
+							'".$facebookID."',
+							'".$currentDate."',
+							'".$status."')";
+	echo "<br>" . $query ."<br>";
+
+	$mysqli = $db->getMysqli();
+	//If query was succesfull
+	if($mysqli->query($query)===TRUE) {
+		echo "<script>window.alert('User account created');</script>";
+	} else {
+		echo "Something went wrong... " . $mysqli->error;
+	}
+
+	//Get customer ID based on email
+
+
+	//Create user profile
+
+
+	$db->close();
+}
+
 /*
 *	Function to hash any password using the Eskblowfish algorithm
 *	@param String strPlainText 	- The password to be hashed
@@ -67,6 +119,7 @@ function validatePassword($strPlainText, $strHash){
     throw new Exception('Hashing mechanism not supported.');
   }
  
+  //Returns if the given password and hashes match
   return (crypt($strPlainText, $strHash) == $strHash) ? true : false;
  }
 ?>

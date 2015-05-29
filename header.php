@@ -25,6 +25,7 @@ session_start();
 error_reporting('E_ALL');
 
 //	Include all the neccesary files to be used on every webpage
+include 'classes/databaseHandler.class.php';
 include 'functions.php';
 
 
