@@ -70,16 +70,16 @@ body {
 }
 
 .profilebutton {
-    width: 50px;
+    width: 40px;
     position: absolute;
-    top: 7px;
+    top: 12px;
     right: 16px;
 }
 
 .homebutton {
-    width: 50px;
+    width: 40px;
     position: absolute;
-    top: 7px;
+    top: 12px;
     left: 16px;
 }
 
@@ -91,4 +91,13 @@ body {
     bottom:0;
     left:0;
     text-align: center;
+}
+#sidebar {
+    width: 307px;
+    height: 100%;
+    position: fixed;
+    top: 64px;
+    left:0;
+    background-color: palegoldenrod;
+
 }

@@ -19,6 +19,9 @@
 			</div>
 		<!-- .content --->
 		</div>
+        <div id="sidebar">
+            stuffs
+        </div>
         <div id="footer">
             © 2015 ROAM
         </div>
