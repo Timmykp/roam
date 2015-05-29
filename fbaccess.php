@@ -26,7 +26,7 @@ use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
 use Facebook\GraphSessionInfo;
 
-// Requested permissions for the app - optional.
+// Requested permissions for the app.
 $permissions = array(
     'email',
     'user_location',

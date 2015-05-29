@@ -38,6 +38,28 @@ function getDocumentTitle(){
 						? "Home" : $base;
 }
 
+/* 
+* Function to see if certain value exists in 'table.column'
+* @param String Table 	- The table to be queried
+* @param String Column 	- The column to be queried
+* @param String value 	- The value that should be checked
+* @return Boolean 		- True if the value exists, false if it doesn't
+*/
+function existsInDatabase($table, $column, $value) {
+	$db = new databaseHandler();
+
+	$mysqli = $db->getMysqli();
+	$query = "SELECT * FROM " . $table . " WHERE " . $column ." = '" . $value ."'";
+
+	if ($result = $mysqli->query($query)) {
+	} else {
+		echo $mysqli->error;
+	}
+	
+	$db->close_db();
+	return ($result->num_rows > 0);
+}
+
 
 /*
 * Function to register an account
@@ -50,44 +72,56 @@ function getDocumentTitle(){
 * @param String country 		- The nationality of the user
 * @param String facebookID 		- The facebookID of the user. Used when registering a user that logged in through Facebook
 * 								  for the first time.
+* @return Array 				- This returns an associative array with two fields:
+* 								  'result' => Boolean wether or not the task succeeded
+* 								  'message' => An added message. Is handy when the function fails at some point.
 */
 function registerAccount($fName, $lName, $hashedPassword, $email, $birthdate, $gender, $country, $facebookID){
-	$db = new databaseHandler();
-	$status = "active";
-	$currentDate = date('Y-m-d');
-	if($facebookID == "") {
-		$facebookID = "NULL";
-	}
 
-	$query = 	"INSERT INTO account(klant_voornaam, klant_achternaam, klant_wachtwoord, klant_email, klant_geboortedatum,
-									klant_geslacht, klant_nationaliteit, facebook_ID, klant_registratie_datum, klant_status) 
-				VALUES (	'".$fName."', 
-							'".$lName."',
-							'".$hashedPassword."', 
-							'".$email."',
-							'".$birthdate."',
-							'".$gender."',
-							'".$country."',
-							'".$facebookID."',
-							'".$currentDate."',
-							'".$status."')";
-	echo "<br>" . $query ."<br>";
+	$db = new databaseHandler(); 	//Create new database object
+	
+	//Check if the email already exists. If it does, no need in registering.
+	if(!existsInDatabase("account", "klant_email", $email)) {
+		
+		$status = "active";				//Default status for new account is active
+		$currentDate = date('Y-m-d');	//The current registration date of the user
+		if($facebookID == "") {			//If facebookID parameter is empty string, assume the user was created on the registration page
+			$facebookID = "NULL";
+		}
 
-	$mysqli = $db->getMysqli();
-	//If query was succesfull
-	if($mysqli->query($query)===TRUE) {
-		echo "<script>window.alert('User account created');</script>";
+		$query = 	"INSERT INTO account(klant_voornaam, klant_achternaam, klant_wachtwoord, klant_email, klant_geboortedatum,
+										klant_geslacht, klant_nationaliteit, facebook_ID, klant_registratie_datum, klant_status) 
+					VALUES (	'".$fName."', 
+								'".$lName."',
+								'".$hashedPassword."', 
+								'".$email."',
+								'".$birthdate."',
+								'".$gender."',
+								'".$country."',
+								'".$facebookID."',
+								'".$currentDate."',
+								'".$status."')";
+
+		$mysqli = $db->getMysqli();
+		//If query was succesfull
+		if($mysqli->query($query)===TRUE) {
+			$db->close_db();
+			 return array('result' => true, 'message' => 'User account Added');
+		} else {
+			$db->close_db();
+			return array('result' => false, 'message' => $mysqli->error);
+		}
 	} else {
-		echo "Something went wrong... " . $mysqli->error;
+		$db->close_db();
+		return array('result' => false, 'message' => 'User email already in use');
 	}
+	
 
-	//Get customer ID based on email
+	$db->close_db();
+	 return array('result' => false, 'message' => 'registerUser Function ended unexpectedly');
 
 
-	//Create user profile
-
-
-	$db->close();
+	
 }
 
 /*
