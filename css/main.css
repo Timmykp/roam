@@ -18,24 +18,19 @@ body {
 #navigation {
     z-index: 10;
     top: 0;
-    background-color: #aaa;
+    background-color: #e65100;
     height: 64px;
     position: fixed;
     width:100%;
 }
 
 #navigation #masthead {
-    float: left;
-    margin-left: 33.333%;
-    margin-top: auto;
-    margin-bottom: auto;
+    text-align: center;
+    position: relative;
 }
 
 #navigation #primary-menu {
-    float: right;
-    padding-right: 1em;
-    margin-top: auto;
-    margin-bottom: auto;
+
 }
 
 /* Content styling: fonts and stuff */
@@ -67,3 +62,23 @@ body {
     font-weight: 300;
 }
 
+/*Logo en button classes in the header*/
+.logo {
+    width: 73px;
+    display: inline-block;
+    margin-top: 16px;
+}
+
+.profilebutton {
+    width: 50px;
+    position: absolute;
+    top: 7px;
+    right: 16px;
+}
+
+.homebutton {
+    width: 50px;
+    position: absolute;
+    top: 7px;
+    left: 16px;
+}
