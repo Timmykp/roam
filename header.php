@@ -50,11 +50,7 @@ require_once 'functions.php';
 				<img class="button profilebutton" src="img/profilebutton.png" alt="Profile" title="Profile">
                 <img class="button homebutton" src="img/homebutton.png" alt="Home" title="Home">
             </div>
-<!--
-            <div id="menu-home">
-				<img class="headerbutton" src="img/profilebutton.png" alt="Profile" title="Profile">
-            </div>
--->
+
             </div>
 
 		</div>

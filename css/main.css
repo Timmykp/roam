@@ -13,6 +13,7 @@ body {
     max-width: 1300px;
     margin: 64px auto 0 auto;
     padding: 32px 24px 24px 24px;
+    margin-left: 16%;
 }
 
 #navigation {
@@ -62,6 +63,10 @@ body {
     font-weight: 300;
 }
 
+h2 {
+    font-size: 1.3vw;
+}
+
 /*Logo en button classes in the header*/
 .logo {
     width: 73px;
@@ -92,12 +97,32 @@ body {
     left:0;
     text-align: center;
 }
+
+/*Sidebar css*/
 #sidebar {
-    width: 307px;
+    width: 15%;
     height: 100%;
     position: fixed;
     top: 64px;
     left:0;
-    background-color: palegoldenrod;
-
+    border-right-style: solid;
+    border-color: grey;
+    border-width: 4px;
 }
+
+
+.iconcontain {
+    display: block;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12vh;
+    text-align: center;
+}
+
+.icon {
+    width: 100%;
+}
+
+
+
