@@ -63,11 +63,21 @@ body {
     font-weight: 300;
 }
 
-h2 {
+.iconcontain h2 {
     font-size: 1.3vw;
     font-weight: 300;
     font-family: "Open Sans";
 }
+
+#sidebar a {
+    text-decoration: none;
+    color: black;
+}
+
+#sidebar a:hover {
+    text-decoration: underline;
+}
+
 
 /*Logo en button classes in the header*/
 .logo {
@@ -80,6 +90,12 @@ h2 {
     width: 40px;
     position: absolute;
     top: 12px;
+    transition: -webkit-filter 0.5s, filter 0.5s;
+}
+
+.button:hover {
+    -webkit-filter: invert(1);
+    filter: invert(1);
 }
 
 .profilebutton {
@@ -120,7 +136,13 @@ h2 {
     margin-right: auto;
     margin-top: 12vh;
     text-align: center;
+    transition: -webkit-filter 0.5s, filter 0.5s;
 }
+
+.iconcontain:hover {
+    -webkit-filter: saturate(10);
+    filter: saturate(10);
+} 
 
 .icon {
     width: 100%;
