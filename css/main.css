@@ -126,5 +126,42 @@ h2 {
     width: 100%;
 }
 
+/*Profile Page (static) */
+div#profile_page { 
+	margin-left: 20px;;
+} 
 
+div#profile_page img{ 
+	height: 100%;
+} 
 
+div#profile_page div#top { 
+	height: 230px;
+	width: 95%;
+	margin-bottom: 40px;
+} 
+
+div#profile_page div#bottom { 
+	height: 230px;
+	width: 95%;
+} 
+
+img.pieter {
+	float: left;
+	margin-right: 30px;
+} 
+
+img.world_map {
+	float: right;
+	margin-right: 50px;
+} 
+
+div#profile_page div#bottom  p{ 
+	width: 500px;
+}
+
+div#current_location { 
+	height: 230px;
+	float: right;
+	margin-right: 30px;
+} 
