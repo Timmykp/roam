@@ -44,12 +44,13 @@ require_once 'functions.php';
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
+    <div id="wrapper">
 		<div id="navigation">
             <div id="masthead">
                 <a href="index.php"><img class="logo" src="img/logoroam-white.png" alt="ROAM logo" title="ROAM logo"></a>
             <div id="primary-menu">
                 <a href="index.php"><img class="button homebutton" src="img/homebutton.png" alt="Home" title="Home"></a>
-				<a href="profile_page.php"><img class="button profilebutton" src="img/profilebutton.png" alt="Profile" title="Profile"></a>
+				<a href="static_profile_page.php"><img class="button profilebutton" src="img/profilebutton.png" alt="Profile" title="Profile"></a>
             </div>
 
             </div>
@@ -57,4 +58,3 @@ require_once 'functions.php';
 		</div>
 		<div id="container">
 			<div class="content">
-				<p>This is the main Header content.</p>

@@ -13,7 +13,6 @@
 *													*
 ****************************************************/ ?>
 
-				<p>This is the main footer content</p>
 
 			<!-- #container -->
 			</div>
@@ -36,5 +35,6 @@
         <div id="footer">
             © 2015 ROAM
         </div>
+    </div>
 	</body>
 </html>
