@@ -2,7 +2,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="main.css">
 </head>
-<?php include 'header.php' ?>
+<?php include 'headerprelogin.php' ?>
 
 <div id="registerForm">
 
@@ -238,4 +238,4 @@
 	</fieldset>
 	</div>
 </div>	
-<?php include 'footer.php' ?>
+<?php include 'footerprelogin.php' ?>

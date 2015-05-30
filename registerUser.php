@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'headerprelogin.php';
 
 if(isset($_POST['submit'])){
 	//Do this if user pressed submit button
