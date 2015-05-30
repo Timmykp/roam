@@ -201,3 +201,27 @@ div#current_location {
 	float: right;
 	margin-right: 30px;
 } 
+/* Register pagina */
+#registerForm {
+	font-family: 'Open Sans';
+	background-color: white;
+	width: 600px;
+	height: auto;
+	background-color: #e4e6eb;
+	text-align: center;
+	margin: 0px auto;
+}
+
+input[type="submit"] {
+	background-color: #2962ff;
+	width: 200px;
+	height: 40px;
+	border-radius: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+}
+
+.registerInfo {
+	color: red;
+}
