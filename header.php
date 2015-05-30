@@ -39,6 +39,7 @@ require_once 'functions.php';
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 		<title><?php echo getDocumentTitle(); ?></title>
+		<link rel="stylesheet" href="css/Open%20Sans/stylesheet.css">
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>

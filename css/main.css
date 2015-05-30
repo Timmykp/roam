@@ -65,6 +65,8 @@ body {
 
 h2 {
     font-size: 1.3vw;
+    font-weight: 300;
+    font-family: "Open Sans";
 }
 
 /*Logo en button classes in the header*/

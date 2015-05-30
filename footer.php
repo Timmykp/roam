@@ -17,7 +17,7 @@
 
 			<!-- #container -->
 			</div>
-		<!-- .content --->
+		<!-- .content -->
 		</div>
         <div id="sidebar">
             <div class="iconcontain">
