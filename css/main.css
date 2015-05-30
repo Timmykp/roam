@@ -134,12 +134,14 @@ body {
     position: fixed;
     top: 64px;
     left:0;
-    border-right-style: solid;
-    border-color: grey;
-    border-width: 4px;
     background-color: white;
 }
 
+#sidebar .border {
+    border-right-style: solid;
+    border-color: #d3d2d2;
+    border-width: 2px;
+}
 
 .iconcontain {
     display: block;
