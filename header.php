@@ -46,7 +46,7 @@ require_once 'functions.php';
 	<body>
 		<div id="navigation">
             <div id="masthead">
-                <img class="logo" src="img/logoroam-white.png" alt="ROAM logo" title="ROAM logo">
+                <a href="index.php"><img class="logo" src="img/logoroam-white.png" alt="ROAM logo" title="ROAM logo"></a>
             <div id="primary-menu">
                 <a href="index.php"><img class="button homebutton" src="img/homebutton.png" alt="Home" title="Home"></a>
 				<a href="profile_page.php"><img class="button profilebutton" src="img/profilebutton.png" alt="Profile" title="Profile"></a>
