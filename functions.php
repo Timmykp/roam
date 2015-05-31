@@ -3,16 +3,17 @@
 *					DOCUMENT INFO 					*
 *													*
 *	This is the functions file for the Roam 		*
-*	Project. Functions that are executed more then 	*
-*	once should be added to this file. This way can *
-*	adhere to the DRY principles (Don't Repeat 		*
+*	Project. Functions that are executed more than 	*
+*	once should be added to this file. This way we 	*
+* 	can adhere to the DRY principles (Don't Repeat 	*
 *	Yourself). Functions have been documented using *
 *	JavaDoc standard. The format is as follows: 	*
 *													*
-	/*												*
+*	/*												*
 *	* Short function explanation					*
 *	* @param VariableType explanation				*
 *	* @return VariableType	explanation				*
+* 	* Examples (if needed) 							*
 *	*\/												*
 *													*
 *				END OF DOCUMENT INFO 				*
@@ -97,31 +98,6 @@ function existsInDatabase($table, $column, $value) {
 }
 
 /*
-* This function will create a default profile for a new user.
-* This function is used during account registration, so that the new
-* user will also get a row in the profiel database table.
-* @param String email 	- The email associated with the account that needs a profile added
-* @return Boolean 		- Returns wether the query was executed succesfully or not
-*/
-function createProfile($email){
-
-	$db = new databaseHandler();
-	$mysqli = $db->getMysqli();
-
-	$options = array('klant_email' => $email);
-
-	//Get the klant_id associated with the email.
-	$id = getSingleValueFromDatabase("account", "klant_ID", $options);
-
-	$query = 	"INSERT INTO profiel(klant_ID, klant_bio) 
-					VALUES (	'".$id."', 
-								'To add a Biography about yourself, edit this field on your profile page!')";
-
-	return ($mysqli->query($query)===TRUE); 		//returns wether or not the query succeeded
-
-}
-
-/*
 * Function to register an account
 * @param String fName 			- The first name of the user
 * @param String lName 			- The last name of the user
@@ -193,6 +169,63 @@ function registerAccount($fName, $lName, $hashedPassword, $email, $birthdate, $g
 
 	$db->close_db();
 	 return array('result' => false, 'message' => 'registerUser Function ended unexpectedly');
+}
+
+/*
+* This function will create a default profile for a new user.
+* This function is used during account registration, so that the new
+* user will also get a row in the profiel database table.
+* @param String email 	- The email associated with the account that needs a profile added
+* @return Boolean 		- Returns wether the query was executed succesfully or not
+*/
+function createProfile($email){
+
+	$db = new databaseHandler();
+	$mysqli = $db->getMysqli();
+
+	$options = array('klant_email' => $email);
+
+	//Get the klant_id associated with the email.
+	$id = getSingleValueFromDatabase("account", "klant_ID", $options);
+
+	$query = 	"INSERT INTO profiel(klant_ID, klant_bio) 
+					VALUES (	'".$id."', 
+								'To add a Biography about yourself, edit this field on your profile page!')";
+
+	return ($mysqli->query($query)===TRUE); 		//returns wether or not the query succeeded
+
+}
+
+/*
+* This function enters a new post in the database
+* @param int ID 	 		- The id for the account that created the post
+* @param date entryDate 	- The date that the post took place (is set by the user)
+* @param String title 		- The title of the post
+* @param String contents 	- THe contents of the post
+* @param String isPublic 	- The privacy settings for the post (yes/no)
+* @return Boolean 			- Returns wether the query was executed succesfully or not
+*/
+function createPost($id, $entryDate, $title, $contents, $isPublic){
+
+	$currentDatetime = date('Y-m-d H:i:s');
+	
+	$db = new databaseHandler();
+	$mysqli = $db->getMysqli();
+
+	//Sanitize input
+	$entryDate 	= $mysqli->real_escape_string($entryDate);
+	$title 		= $mysqli->real_escape_string($title);
+	$contents 	= $mysqli->real_escape_string($contents);
+
+	$query = 	"INSERT INTO posts(klant_ID, post_datum, post_titel, post_inhoud, post_creatie_tijd, post_is_public) 
+					VALUES (	'".$id."', 
+								'".$entryDate."', 
+								'".$title."', 
+								'".$contents."', 
+								'".$currentDatetime."',
+								'".$isPublic."')";
+
+	return ($mysqli->query($query)===TRUE); 		//returns wether or not the query succeeded
 }
 
 /*

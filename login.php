@@ -15,19 +15,20 @@ if(isset($_POST['roam-submit'])) {
 
 	if($email == "" || $password == "") {
 		$error .= "<p class='error-msg'>Email and password fields cannot be empty!</p>";
+		exit;
 	}
 
 	if($error != "") {
 		showLogin($error);
-		exit;
 	}
 
 	if(validateLogin($email, $password)){
 		//Login validation succeeded.
-		$_SESSION['loggedIn'] = true;
-		$_SESSION['email'] = $email;
-		$_SESSION['fName'] = getSingleValueFromDatabase('account', 'klant_voornaam', array('klant_email' => $email));
-		$_SESSION['lName'] = getSingleValueFromDatabase('account', 'klant_achternaam', array('klant_email' => $email));
+		$_SESSION['loggedIn'] 		= true;
+		$_SESSION['email'] 			= $email;
+		$_SESSION['fName'] 			= getSingleValueFromDatabase('account', 'klant_voornaam', array('klant_email' => $email));
+		$_SESSION['lName'] 			= getSingleValueFromDatabase('account', 'klant_achternaam', array('klant_email' => $email));
+		$_SESSION['id'] 			= getSingleValueFromDatabase('account', 'klant_ID', array('klant_email' => $email));
 		header('Location: index.php');
 	} else {
 		//Login validation failed
@@ -43,7 +44,7 @@ if(isset($_POST['roam-submit'])) {
 * @param none
 * @return none
 */	
-function showLogin($error){ ?>
+function showLogin($message){ ?>
 
 <section id="splash">
 		<div id="container-left">
@@ -54,7 +55,7 @@ function showLogin($error){ ?>
 					- or -
 					</div>
 
-					<?php echo $error; ?>
+					<?php echo $message; ?>
 					<div id="input-fields">
 							<input type="text" name="email" placeholder="email">
 							<input type="password" name="password" placeholder="password">
