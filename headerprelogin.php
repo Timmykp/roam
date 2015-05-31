@@ -28,6 +28,10 @@ error_reporting('E_ALL');
 require_once 'classes/databaseHandler.class.php';
 require_once 'functions.php';
 
+if($_SESSION['loggedIn'] == true) {
+	header('Location: index.php');
+}
+
 
 /*	Opening the proper HTML Body declarations 		*/ ?>
 <!DOCTYPE HTML>
