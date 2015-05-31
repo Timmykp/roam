@@ -148,6 +148,11 @@ body {
     padding-bottom: 1em;
 }
 
+.error-msg {
+    color: red;
+    font-weight: 700;
+}
+
 /*Footer css*/
 #footer {
     width:100%;

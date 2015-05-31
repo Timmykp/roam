@@ -11,6 +11,17 @@ if(isset($_POST['roam-submit'])) {
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 
+	$error = "";
+
+	if($email == "" || $password == "") {
+		$error .= "<p class='error-msg'>Email and password fields cannot be empty!</p>";
+	}
+
+	if($error != "") {
+		showLogin($error);
+		exit;
+	}
+
 	if(validateLogin($email, $password)){
 		//Login validation succeeded.
 		$_SESSION['loggedIn'] = true;
@@ -18,11 +29,11 @@ if(isset($_POST['roam-submit'])) {
 		header('Location: index.php');
 	} else {
 		//Login validation failed
-		echo "<script>window.alert('boo!');</script>";
+		showLogin("<p class='error-msg'>The entered email and password do not match. Please try again.</p>");
 	}
 
 } else {
-	showLogin();
+	showLogin("");
 }
 
 /*
@@ -30,7 +41,7 @@ if(isset($_POST['roam-submit'])) {
 * @param none
 * @return none
 */	
-function showLogin(){ ?>
+function showLogin($error){ ?>
 
 <section id="splash">
 		<div id="container-left">
@@ -41,6 +52,7 @@ function showLogin(){ ?>
 					- or -
 					</div>
 
+					<?php echo $error; ?>
 					<div id="input-fields">
 							<input type="text" name="email" placeholder="email">
 							<input type="password" name="password" placeholder="password">
