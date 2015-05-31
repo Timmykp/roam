@@ -8,11 +8,17 @@ body {
 	font: 1em/1.5 "Open Sans", Arial, sans-serif;
 }
 
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
 #container {
 	position: relative;
     max-width: 1300px;
-    margin: 64px auto 0 auto;
-    padding: 32px 24px 24px 24px;
+    margin: 0px auto 0 auto;
+    padding: 96px 24px 24px 24px;
+    margin-left: 16%;
 }
 
 #navigation {
@@ -62,6 +68,26 @@ body {
     font-weight: 300;
 }
 
+.content {
+    padding-bottom: 50px;
+}
+
+.iconcontain h2 {
+    font-size: 1.3vw;
+    font-weight: 300;
+    font-family: "Open Sans";
+}
+
+#sidebar a {
+    text-decoration: none;
+    color: black;
+}
+
+#sidebar a:hover {
+    text-decoration: underline;
+}
+
+
 /*Logo en button classes in the header*/
 .logo {
     width: 73px;
@@ -73,6 +99,12 @@ body {
     width: 40px;
     position: absolute;
     top: 12px;
+    transition: -webkit-filter 0.5s, filter 0.5s;
+}
+
+.button:hover {
+    -webkit-filter: invert(1);
+    filter: invert(1);
 }
 
 .profilebutton {
@@ -86,18 +118,110 @@ body {
 /*Footer css*/
 #footer {
     width:100%;
-    height: 50px;
-    position:absolute;
-    bottom:0;
-    left:0;
+	height:50px;
+	position:absolute;
+	bottom:0;
+	left:0;
     text-align: center;
+    clear: both;
+    padding-top: 20px;
 }
+
+/*Sidebar css*/
 #sidebar {
-    width: 307px;
+    width: 15%;
     height: 100%;
     position: fixed;
     top: 64px;
     left:0;
-    background-color: palegoldenrod;
+    background-color: white;
+}
 
+#sidebar .border {
+    border-right-style: solid;
+    border-color: #d3d2d2;
+    border-width: 2px;
+}
+
+.iconcontain {
+    display: block;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12vh;
+    text-align: center;
+    transition: -webkit-filter 0.5s, filter 0.5s;
+}
+
+.iconcontain:hover {
+    -webkit-filter: saturate(10);
+    filter: saturate(10);
+} 
+
+.icon {
+    width: 100%;
+}
+
+/*Profile Page (static) */
+div#profile_page { 
+	margin-left: 20px;;
+} 
+
+div#profile_page img{ 
+	height: 100%;
+} 
+
+div#profile_page div#top { 
+	height: 230px;
+	width: 95%;
+	margin-bottom: 40px;
+} 
+
+div#profile_page div#bottom { 
+	height: 230px;
+	width: 95%;
+} 
+
+img.pieter {
+	float: left;
+	margin-right: 30px;
+} 
+
+img.world_map {
+	float: right;
+	margin-right: 50px;
+} 
+
+div#profile_page div#bottom  p{ 
+	width: 500px;
+}
+
+div#current_location { 
+	height: 230px;
+	float: right;
+	margin-right: 30px;
+} 
+/* Register pagina */
+#registerForm {
+	font-family: 'Open Sans';
+	background-color: white;
+	width: 600px;
+	height: auto;
+	background-color: #e4e6eb;
+	text-align: center;
+	margin: 0px auto;
+}
+
+input[type="submit"] {
+	background-color: #2962ff;
+	width: 200px;
+	height: 40px;
+	border-radius: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+}
+
+.registerInfo {
+	color: red;
 }

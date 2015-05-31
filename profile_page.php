@@ -2,11 +2,11 @@
 /****************************************************
 *					DOCUMENT INFO 					*
 *													*
-*	This is the main index for the Roam Project,	*
+*	This is the profile page for the Roam Project,	*
 *	also known as the homepage. This file does the 	*
 *	following things:								*
 *	A) Import the header file 						*
-*	B) Main body content shizzle					*
+*	B) Show profile									*
 *	?) Import the footer 							*
 *													*
 *													*
@@ -19,8 +19,9 @@ include 'header.php';
 
 
 /*	Main document functionality						*/ ?>
-<p>This is the main body content</p>
-
+<div id="profile_page">
+	
+</div>
 <?php
 /*	Importing of the site-wide footer 				*/
 include 'footer.php'
