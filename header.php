@@ -28,7 +28,6 @@ error_reporting('E_ALL');
 require_once 'classes/databaseHandler.class.php';
 require_once 'functions.php';
 
-
 /*	Opening the proper HTML Body declarations 		*/ ?>
 <!DOCTYPE HTML>
 <html>

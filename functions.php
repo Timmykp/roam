@@ -38,6 +38,43 @@ function getDocumentTitle(){
 						? "Home" : $base;
 }
 
+/*
+*	Function to retrieve a single value from the database, based on the given parameters.
+* 	@param String table 		- The table of the database where the value is needed
+* 	@param String column 		- The column of the table where the value is needed
+* 	@param Array options 		- Specification of the WHERE clause in the SQL statement, entered as an associative array
+* 	@return String value 		- The retrieved value from the database
+* 	Example: getSingleValueFromDatabase('account', 'klant_email', array('klant_ID' => '5')) will result in the following query:
+* 		SELECT klant_email FROM account WHERE klant_ID = '5' AND '' = ''
+* 	and will return the requested klant_email, or NULL if it doesn't exist.
+*  	NOTE: This function does not handle errors well (yet)
+*/
+ function getSingleValueFromDatabase($table, $column, $options) {
+ 	 $db = new databaseHandler();	//Instantiation of new DB object
+
+
+ 	 $mysqli = $db->getMysqli();		//Request the myslqli object from the object
+
+ 	 $query = "SELECT ". $column ." FROM ". $table ." WHERE ";	 //Add all the options from the options array to the where clause.
+ 	 while($arrayPosition = current($options)) {
+	 	$query .= key($options) . " = '". $arrayPosition . "' AND ";
+ 		next($options);
+ 	 }
+
+ 	 $query .= "'' = ''"; 						//Solves neccesity to count options array for appending AND
+ 	echo "'$query";
+ 	
+ 	$res = $mysqli->query($query); 				//Execute query and save resultset
+ 	$resultsArray = $res->fetch_assoc(); 		//Fetch results from the resultset and store as associative array.
+ 												//This assumes only a single result is retrieved, hence the function name
+ 	$value = $resultsArray["$column"];			//Get the value that was requested for the column, as sepcified by the function parameters
+
+
+ 	 $db->close_db();							//Close the database connection of the object
+ 	 return $value;								//Return the value from the function
+
+  }
+
 /* 
 * Function to see if certain value exists in 'table.column'
 * @param String Table 	- The table to be queried
@@ -60,6 +97,30 @@ function existsInDatabase($table, $column, $value) {
 	return ($result->num_rows > 0);
 }
 
+/*
+* This function will create a default profile for a new user.
+* This function is used during account registration, so that the new
+* user will also get a row in the profiel database table.
+* @param String email 	- The email associated with the account that needs a profile added
+* @return Boolean 		- Returns wether the query was executed succesfully or not
+*/
+function createProfile($email){
+
+	$db = new databaseHandler();
+	$mysqli = $db->getMysqli();
+
+	$options = array('klant_email' => $email);
+
+	//Get the klant_id associated with the email.
+	$id = getSingleValueFromDatabase("account", "klant_ID", $options);
+
+	$query = 	"INSERT INTO profiel(klant_ID, klant_bio) 
+					VALUES (	'".$id."', 
+								'To add a Biography about yourself, edit this field on your profile page!')";
+
+	return ($mysqli->query($query)===TRUE); 		//returns wether or not the query succeeded
+
+}
 
 /*
 * Function to register an account
@@ -79,6 +140,17 @@ function existsInDatabase($table, $column, $value) {
 function registerAccount($fName, $lName, $hashedPassword, $email, $birthdate, $gender, $country, $facebookID){
 
 	$db = new databaseHandler(); 	//Create new database object
+
+	$mysqli = $db->getMysqli();
+
+	//Clean input to prevent SQL injection
+	$fName 			= $mysqli->real_escape_string($fName);
+	$lName 			= $mysqli->real_escape_string($lName);
+	$hashedPassword = $mysqli->real_escape_string($hashedPassword);
+	$email 			= $mysqli->real_escape_string($email);
+	$birthdate		= $mysqli->real_escape_string($birthdate);
+	$gender 		= $mysqli->real_escape_string($gender);
+	$country 		= $mysqli->real_escape_string($country);
 	
 	//Check if the email already exists. If it does, no need in registering.
 	if(!existsInDatabase("account", "klant_email", $email)) {
@@ -102,11 +174,14 @@ function registerAccount($fName, $lName, $hashedPassword, $email, $birthdate, $g
 								'".$currentDate."',
 								'".$status."')";
 
-		$mysqli = $db->getMysqli();
 		//If query was succesfull
 		if($mysqli->query($query)===TRUE) {
 			$db->close_db();
-			 return array('result' => true, 'message' => 'User account Added');
+			if(createProfile($email)){
+				return array('result' => true, 'message' => 'User account and profile added');
+			} else {
+				return array('result' => false, 'message' => 'User account was created, but the profile could not be created');
+			}
 		} else {
 			$db->close_db();
 			return array('result' => false, 'message' => $mysqli->error);
@@ -119,9 +194,6 @@ function registerAccount($fName, $lName, $hashedPassword, $email, $birthdate, $g
 
 	$db->close_db();
 	 return array('result' => false, 'message' => 'registerUser Function ended unexpectedly');
-
-
-	
 }
 
 /*
