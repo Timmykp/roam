@@ -4,11 +4,6 @@ include 'headerprelogin.php';
 if(isset($_POST['submit'])){
 	//Do this if user pressed submit button
 	
-	//$i = $i + $i;
-	//$i += $i;
-	//"string" = "string " + "String"; //stringString
-	//"string" .= "String"; //stringString
-	
 	//Validate form field
 	
 	$error = "";

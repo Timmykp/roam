@@ -217,7 +217,7 @@ function hashPassword($strPlainText) {
 * @param String strHash 	 	- The hash that the password is checked against.
 * @return Boolean 				- The result of the validation.
 * Example: You could check an entered password against the hash in the database.
-* This will determine if the user entered a correct password for the user.
+* This will determine if the user entered a correct password for the account.
 */
 function validatePassword($strPlainText, $strHash){
   if (CRYPT_SHA512 != 1) {
@@ -227,4 +227,14 @@ function validatePassword($strPlainText, $strHash){
   //Returns if the given password and hashes match
   return (crypt($strPlainText, $strHash) == $strHash) ? true : false;
  }
+
+function validateLogin($email, $password){
+
+	//Retrieve hash from database for the account using the given email
+	$options = array('klant_email' => $email);
+	$hash = getSingleValueFromDatabase('account', 'klant_wachtwoord', $options);
+
+	//Compare the hash and the password
+	return validatePassword($password, $hash);
+}
 ?>
