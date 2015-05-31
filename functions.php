@@ -76,7 +76,7 @@ function getDocumentTitle(){
   }
 
 /* 
-* Function to see if certain value exists in 'table.column'
+* Function to see if certain value exists in any row for 'table.column'
 * @param String Table 	- The table to be queried
 * @param String Column 	- The column to be queried
 * @param String value 	- The value that should be checked
@@ -90,6 +90,7 @@ function existsInDatabase($table, $column, $value) {
 
 	if ($result = $mysqli->query($query)) {
 	} else {
+		//If no error is printed we know the query was executed succesfully
 		echo $mysqli->error;
 	}
 	

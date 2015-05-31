@@ -12,5 +12,6 @@ require_once 'header.php';
  // else
 	// echo "Success! Attached message: " . $returned['message'] . "<br>";
 
+
 require_once 'footer.php';
 ?>

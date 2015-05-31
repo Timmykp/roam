@@ -28,6 +28,7 @@ error_reporting('E_ALL');
 require_once 'classes/databaseHandler.class.php';
 require_once 'functions.php';
 
+
 /*	Opening the proper HTML Body declarations 		*/ ?>
 <!DOCTYPE HTML>
 <html>
@@ -47,10 +48,7 @@ require_once 'functions.php';
 		<div id="navigation">
             <div id="masthead">
                 <a href="index.php"><img class="logo" src="img/logoroam-white.png" alt="ROAM logo" title="ROAM logo"></a>
-            <div id="primary-menu">
-                <a href="index.php"><img class="button homebutton" src="img/homebutton.png" alt="Home" title="Home"></a>
-				<a href="static_profile_page.php"><img class="button profilebutton" src="img/profilebutton.png" alt="Profile" title="Profile"></a>
-            </div>
+
 
             </div>
 
