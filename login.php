@@ -26,6 +26,8 @@ if(isset($_POST['roam-submit'])) {
 		//Login validation succeeded.
 		$_SESSION['loggedIn'] = true;
 		$_SESSION['email'] = $email;
+		$_SESSION['fName'] = getSingleValueFromDatabase('account', 'klant_voornaam', array('klant_email' => $email));
+		$_SESSION['lName'] = getSingleValueFromDatabase('account', 'klant_achternaam', array('klant_email' => $email));
 		header('Location: index.php');
 	} else {
 		//Login validation failed

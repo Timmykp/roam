@@ -61,4 +61,3 @@ if($_SESSION['loggedIn'] != true) {
 		</div>
 		<div id="container">
 			<div class="content">
-				<p>This is the main Header content.</p>

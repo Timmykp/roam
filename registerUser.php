@@ -57,7 +57,17 @@ if(isset($_POST['submit'])){
 	
 	if($error == ""){
 		$hash = hashPassword($_POST['password']);
-		registerAccount($_POST['fName'], $_POST['lName'], $hash, $_POST['email'], $_POST['birthdate'], $_POST['gender'], $_POST['country'], "");
+		$returned = registerAccount($_POST['fName'], $_POST['lName'], $hash, $_POST['email'], $_POST['birthdate'], $_POST['gender'], $_POST['country'], "");
+		if($returned['result'] == false) {
+			echo "<center> ".  $returned['message'] . "</center>";
+			include 'register.php';
+		} else {
+			$_SESSION['loggedIn'] = true;
+			$_SESSION['email'] = $email;
+			$_SESSION['fName'] = getSingleValueFromDatabase('account', 'klant_voornaam', array('klant_email' => $email));
+			$_SESSION['lName'] = getSingleValueFromDatabase('account', 'klant_achternaam', array('klant_email' => $email));
+			header('Location: index.php');
+		}
 	} else {
 		//Show Form
 		echo "<center> $error </center>";

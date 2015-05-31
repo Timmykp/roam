@@ -17,11 +17,11 @@
 /*	Importing of the site-wide header 				*/
 include 'header.php';
 
+/*	Main document functionality						*/
+echo "<p>Welcome, " . $_SESSION['fName'] . " " . $_SESSION['lName'] ."!</p>";
+echo "<p><a href='logout.php'>Click this link to logout.</a></p>";
 
-/*	Main document functionality						*/ ?>
-<p>This is the main body content</p>
 
-<?php
 /*	Importing of the site-wide footer 				*/
 include 'footer.php'
 

@@ -179,7 +179,7 @@ function registerAccount($fName, $lName, $hashedPassword, $email, $birthdate, $g
 			if(createProfile($email)){
 				return array('result' => true, 'message' => 'User account and profile added');
 			} else {
-				return array('result' => false, 'message' => 'User account was created, but the profile could not be created');
+				return array('result' => false, 'message' => 'User account was created, but the profile could not be created. Please contact customer support.');
 			}
 		} else {
 			$db->close_db();
@@ -187,7 +187,7 @@ function registerAccount($fName, $lName, $hashedPassword, $email, $birthdate, $g
 		}
 	} else {
 		$db->close_db();
-		return array('result' => false, 'message' => 'User email already in use');
+		return array('result' => false, 'message' => 'This email is already used on this site!');
 	}
 	
 
