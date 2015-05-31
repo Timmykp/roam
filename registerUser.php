@@ -30,8 +30,8 @@ if(isset($_POST['submit'])){
 	if(strlen($_POST['password']) > 30) {
 		$error .= "Oops! Your password may not be longer than 30 characters.<br>";
 	}
-	if(strlen($_POST['password']) < 10) {
-		$error .= "Oops! Your password must be longer than 10 characters.<br>";
+	if(strlen($_POST['password']) < 6) {
+		$error .= "Oops! Your password must be longer than 6 characters.<br>";
 	}
 	if(preg_match('/[^0-9A-Za-z]/',$_POST['fName'])){
 		$error .= "Oops! Your first name contains unknown characters.<br>";
