@@ -248,6 +248,26 @@ div#profile_page div#current_location {
 	float: right;
 	margin-right: 30px;
 } 
+
+/*edit_profile_page  */
+div#edit_profile_page { 
+	margin-top: 56px;
+	padding: 0px 20px;
+} 
+
+div#edit_profile_page div#account { 
+	float: left;
+	margin-right: 60px;
+}	
+
+div#edit_profile_page form div#account p {
+	margin-bottom: 5px;
+} 
+
+div#edit_profile_page form div#profile p {
+	margin-bottom: 5px;
+} 
+
 /* Register pagina */
 #registerForm {
 	font-family: 'Open Sans';

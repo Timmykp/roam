@@ -21,7 +21,7 @@ include 'header.php';
 /*	Main document functionality						*/ ?>
 <div id="profile_page">
 		<div id="top">
-		<img src="img/pieter.jpg" class="profile_picture" alt="Profile Picture"> 
+		<img src="<?php echo ucfirst(getSingleValueFromDatabase('profiel', 'klant_foto_url', array('klant_ID' => $_SESSION['id'] ))) ?>" class="profile_picture" alt="Profile Picture"> 
 		<img src="img/world_map.jpg" class="world_map" alt="Visited countries">
 		<h3><?php echo $_SESSION['fName'] . " " . $_SESSION['lName']?></h3>
 		<p class="user_information">
@@ -29,7 +29,7 @@ include 'header.php';
 			<?php echo getSingleValueFromDatabase('account', 'klant_geboortedatum', array('klant_ID' => $_SESSION['id'] )) ?><br>
 			Sex: <?php echo getSingleValueFromDatabase('account', 'klant_geslacht', array('klant_ID' => $_SESSION['id'] )) ?><br>
 		</p>
-		<button type="button" class="profilePictureButton" >change</button> 
+		<a href="edit_profile_page.php"><button type="button" class="edit_profile_button" >change profile</button></a>
 	</div>
 	<div id="bottom">
 		<div id="current_location">
