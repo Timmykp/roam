@@ -28,6 +28,10 @@ error_reporting('E_ALL');
 require_once 'classes/databaseHandler.class.php';
 require_once 'functions.php';
 
+if($_SESSION['loggedIn'] != true) {
+	header('Location: login.php');
+}
+
 
 /*	Opening the proper HTML Body declarations 		*/ ?>
 <!DOCTYPE HTML>
@@ -44,13 +48,12 @@ require_once 'functions.php';
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-    <div id="wrapper">
 		<div id="navigation">
             <div id="masthead">
-                <a href="index.php"><img class="logo" src="img/logoroam-white.png" alt="ROAM logo" title="ROAM logo"></a>
+                <img class="logo" src="img/logoroam-white.png" alt="ROAM logo" title="ROAM logo">
             <div id="primary-menu">
-                <a href="index.php"><img class="button homebutton" src="img/homebutton.png" alt="Home" title="Home"></a>
-				<a href="static_profile_page.php"><img class="button profilebutton" src="img/profilebutton.png" alt="Profile" title="Profile"></a>
+				<img class="button profilebutton" src="img/profilebutton.png" alt="Profile" title="Profile">
+                <img class="button homebutton" src="img/homebutton.png" alt="Home" title="Home">
             </div>
 
             </div>

@@ -4,11 +4,6 @@ include 'headerprelogin.php';
 if(isset($_POST['submit'])){
 	//Do this if user pressed submit button
 	
-	//$i = $i + $i;
-	//$i += $i;
-	//"string" = "string " + "String"; //stringString
-	//"string" .= "String"; //stringString
-	
 	//Validate form field
 	
 	$error = "";
@@ -30,8 +25,8 @@ if(isset($_POST['submit'])){
 	if(strlen($_POST['password']) > 30) {
 		$error .= "Oops! Your password may not be longer than 30 characters.<br>";
 	}
-	if(strlen($_POST['password']) < 10) {
-		$error .= "Oops! Your password must be longer than 10 characters.<br>";
+	if(strlen($_POST['password']) < 6) {
+		$error .= "Oops! Your password must be longer than 6 characters.<br>";
 	}
 	if(preg_match('/[^0-9A-Za-z]/',$_POST['fName'])){
 		$error .= "Oops! Your first name contains unknown characters.<br>";
@@ -62,7 +57,17 @@ if(isset($_POST['submit'])){
 	
 	if($error == ""){
 		$hash = hashPassword($_POST['password']);
-		registerAccount($_POST['fName'], $_POST['lName'], $hash, $_POST['email'], $_POST['birthdate'], $_POST['gender'], $_POST['country'], "");
+		$returned = registerAccount($_POST['fName'], $_POST['lName'], $hash, $_POST['email'], $_POST['birthdate'], $_POST['gender'], $_POST['country'], "");
+		if($returned['result'] == false) {
+			echo "<center> ".  $returned['message'] . "</center>";
+			include 'register.php';
+		} else {
+			$_SESSION['loggedIn'] = true;
+			$_SESSION['email'] = $email;
+			$_SESSION['fName'] = getSingleValueFromDatabase('account', 'klant_voornaam', array('klant_email' => $email));
+			$_SESSION['lName'] = getSingleValueFromDatabase('account', 'klant_achternaam', array('klant_email' => $email));
+			header('Location: index.php');
+		}
 	} else {
 		//Show Form
 		echo "<center> $error </center>";

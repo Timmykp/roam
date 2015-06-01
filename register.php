@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<head>
-<link rel="stylesheet" type="text/css" href="main.css">
-</head>
 <?php include 'headerprelogin.php' ?>
 
 <div id="registerForm">

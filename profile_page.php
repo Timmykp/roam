@@ -23,7 +23,7 @@ include 'header.php';
 	<div id="top">
 		<img src="img/pieter.jpg" class="pieter" alt="Profile Picture">
 		<img src="img/world_map.jpg" class="world_map" alt="Visited countries">
-		<h3>Pieter de graaf</h3>
+		<h3><?php echo $_SESSION['fName'] . " " . $_SESSION['lName']?></h3>
 		<p>
 			The Netherlands <br>
 			11-09-1992 <br>
