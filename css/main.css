@@ -97,12 +97,16 @@ body {
     width: 40px;
     position: absolute;
     top: 12px;
-    transition: -webkit-filter 0.5s, filter 0.5s;
+/*    transition: -webkit-filter 0.5s, filter 0.5s;*/
+    transition: 0.7s ease-in-out;
 }
 
 .button:hover {
+/*
     -webkit-filter: invert(1);
     filter: invert(1);
+*/
+    transform: rotate(360deg);
 }
 
 .profilebutton {
