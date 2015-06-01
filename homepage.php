@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="style1.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
 
 	<div class="container">
 	
