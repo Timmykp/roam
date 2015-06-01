@@ -204,49 +204,54 @@ body {
     width: 100%;
 }
 
-/*Profile Page (static) */
+/*Profile Page */
 div#profile_page { 
-	margin-left: 20px;
-	margin-top: 56px;
-	padding: 0px 20px;
+	width: 94%;
+	margin-left: 10px;
+	margin-top: 10px;
+	padding: 10px;
+	clear: both;
 } 
 
 div#profile_page img{ 
-	height: 90%;
+	height: 100%;
 } 
 
-div#profile_page div#top { 
-	height: 230px;
+div#profile_page div#profile_header { 
+	height: 320px;
+	width: 100%;
+} 
+
+div#profile_page div#profile_header img.header_picture { 
+	width: 100%;
+	z-index: -1;
+} 
+
+div#profile_page div#profile_top { 
+	height: 220px;
+}
+
+div#profile_page div#profile_content { 
+	height: 220px;
 	width: 95%;
-	margin-bottom: 28px;
+	padding: 28px 30px;
+	height: 100%;
 } 
 
-div#profile_page div#bottom { 
-	height: 230px;
-	width: 95%;
-} 
-
-div#profile_page img.profile_picture {
+div#profile_page div#profile_top img.profile_picture {
 	float: left;
 	margin-right: 30px;
-} 
-
-div#profile_page button.profilePictureButton{ 
+	border-style: solid;
 } 
 
 div#profile_page img.world_map {
 	float: right;
-	margin-right: 50px;
 } 
-
-div#profile_page div#bottom  p{ 
-	width: 500px;
-}
 
 div#profile_page div#current_location { 
 	height: 230px;
 	float: right;
-	margin-right: 30px;
+	clear: both;
 } 
 
 /*edit_profile_page  */

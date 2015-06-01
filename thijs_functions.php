@@ -24,14 +24,11 @@ function changeSingleValueFromDatabase($table, $column, $newValue, $options) {
 	
 }
   
+//-------------------------------------------------------------Changing account and profile data------------------------------------
+  
 function changeProfilePicture($fotoUrl) { 
-
-	$table = 'profiel';
-	$column = 'klant_foto_url';	
-	$newValue = $fotoUrl;
-	$options = array('klant_ID' => $_SESSION['id']);
 	
-	if (changeSingleValueFromDatabase($table, $column, $newValue, $options)==TRUE) { ;
+	if (changeSingleValueFromDatabase('profiel', 'klant_foto_url', $fotoUrl, array('klant_ID' => $_SESSION['id']))==TRUE) {
 	echo "Changed profile picture<br>";
 	} else { 
 	echo "Something went wrong. Please try again";
@@ -39,13 +36,8 @@ function changeProfilePicture($fotoUrl) {
 }   
 
 function changeProfileBio($klantBio) { 
-
-	$table = 'profiel';
-	$column = 'klant_bio';	
-	$newValue = $klantBio;
-	$options = array('klant_ID' => $_SESSION['id']);
 	
-	if (changeSingleValueFromDatabase($table, $column, $newValue, $options)==TRUE) { ;
+	if (changeSingleValueFromDatabase('profiel', 'klant_bio', $klantBio, array('klant_ID' => $_SESSION['id']))==TRUE) { 
 	echo "Changed biography<br>";
 	} else { 
 	echo "Something went wrong. Please try again";
@@ -53,13 +45,8 @@ function changeProfileBio($klantBio) {
 } 
 
 function changeAccountFirstName($klantVoornaam) { 
-
-	$table = 'account';
-	$column = 'klant_voornaam';	
-	$newValue = $klantVoornaam;
-	$options = array('klant_ID' => $_SESSION['id']);
 	
-	if (changeSingleValueFromDatabase($table, $column, $newValue, $options)==TRUE) { ;
+	if (changeSingleValueFromDatabase('account', 'klant_voornaam', $klantVoornaam, array('klant_ID' => $_SESSION['id']))==TRUE) { 
 	echo "Changed first name<br>";
 	} else { 
 	echo "Something went wrong. Please try again";
@@ -68,12 +55,16 @@ function changeAccountFirstName($klantVoornaam) {
 
 function changeAccountLastName($klantAchternaam) { 
 
-	$table = 'account';
-	$column = 'klant_achternaam';	
-	$newValue = $klantAchternaam;
-	$options = array('klant_ID' => $_SESSION['id']);
-	
-	if (changeSingleValueFromDatabase($table, $column, $newValue, $options)==TRUE) { ;
+	if (changeSingleValueFromDatabase('account', 'klant_achternaam', $klantAchternaam, array('klant_ID' => $_SESSION['id']))==TRUE) { ;
+	echo "Changed last name<br>";
+	} else { 
+	echo "Something went wrong. Please try again";
+	} 
+}
+
+function changeAccountEmail($klantEmail) { 
+
+	if (changeSingleValueFromDatabase('account', 'klant_email', $klantEmail, array('klant_ID' => $_SESSION['id']))==TRUE) { ;
 	echo "Changed last name<br>";
 	} else { 
 	echo "Something went wrong. Please try again";
@@ -84,12 +75,7 @@ function changeAccountLastName($klantAchternaam) {
 NOG NIET IN GEBRUIK!!
 function changeAccountNationality($klantNationaliteit) { 
 
-	$table = 'account';
-	$column = 'klant_nationaliteit';	
-	$newValue = $klantNationaliteit;
-	$options = array('klant_ID' => $_SESSION['id']);
-	
-	if (changeSingleValueFromDatabase($table, $column, $newValue, $options)==TRUE) { ;
+	if (changeSingleValueFromDatabase('account', 'klant_nationaliteit', $klantNationaliteit, array('klant_ID' => $_SESSION['id']))==TRUE) { ;
 	echo "Profiel aangepast";
 	} else { 
 	echo "Something went wrong. Please try again";
@@ -98,13 +84,8 @@ function changeAccountNationality($klantNationaliteit) {
 */
 
 function changeAccountDateOfBirth($klantGeboortedatum) { 
-
-	$table = 'account';
-	$column = 'klant_geboortedatum';	
-	$newValue = $klantGeboortedatum;
-	$options = array('klant_ID' => $_SESSION['id']);
 	
-	if (changeSingleValueFromDatabase($table, $column, $newValue, $options)==TRUE) { ;
+	if (changeSingleValueFromDatabase('account', 'klant_geboortedatum', $klantGeboortedatum, array('klant_ID' => $_SESSION['id']))==TRUE) { ;
 	echo "Changed date of birth<br>";
 	} else { 
 	echo "Something went wrong. Please try again";
@@ -113,17 +94,15 @@ function changeAccountDateOfBirth($klantGeboortedatum) {
 
 function changeAccountSex($klantGeslacht) { 
 
-	$table = 'account';
-	$column = 'klant_geslacht';	
-	$newValue = $klantGeslacht;
-	$options = array('klant_ID' => $_SESSION['id']);
-	
-	if (changeSingleValueFromDatabase($table, $column, $newValue, $options)==TRUE) { ;
+	if (changeSingleValueFromDatabase('account', 'klant_geslacht', $klantGeslacht, array('klant_ID' => $_SESSION['id']))==TRUE) { ;
 	echo "Changed Sex<br>";
 	} else { 
 	echo "Something went wrong. Please try again";
 	} 
 }
+
+//--------------------------- If not empty, calling the function. (handigere manier?) (geslacht is nooit empty) (wil verhaal in biography houden als value) -----------------
+
 
 if (!$_POST['profiel_foto']=="") { 
 	$fotoUrl = $_POST['profiel_foto'];
@@ -146,6 +125,12 @@ if (!$_POST['klant_achternaam']=="") {
 	$klantAchternaam = $_POST['klant_achternaam'];
 	changeAccountLastName($klantAchternaam);
 } 
+
+if (!$_POST['klant_email']=="") { 
+	$klantAchternaam = $_POST['klant_email'];
+	changeAccountLastName($klantAchternaam);
+}
+
 /*
 NOG NIET IN GEBRUIK!!
 if (!$_POST['klant_nationaliteit']=="") { 

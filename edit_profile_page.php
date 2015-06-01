@@ -26,7 +26,9 @@ include 'header.php';
 			<p>Change first name</p>
 			<input type='text' name='klant_voornaam' placeholder='First name' size="30"><br>
 			<p>Change last name</p>
-			<input type='text' name='klant_achternaam' placeholder='Last name' size="30">
+			<input type='text' name='klant_voornaam' placeholder='First name' size="30"><br>
+			<p>Change email</p>
+			<input type='text' name='klant_email' placeholder='E-mail' size="30">
 			<p>Change nationality, NOG NIET IN GEBRUIK!!</p>
 			<input type='text' name='klant_nationaliteit' placeholder='Nationality' size="30"> <!-- Is er een handigere manier om een land te kiezen dan al die opties in het registratieformulier? -->
 			<p>Change date of birth</p>
