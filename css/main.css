@@ -268,4 +268,160 @@ input[type="submit"] {
 
 
 
+body {}
 
+.homepageicons img {
+	user-drag: none; -moz-user-select: none; -webkit-user-drag: none;
+  display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px; 
+clear: both;
+   padding: 0px;
+   margin: 0px;
+  overflow:hidden;
+	
+	}
+
+	
+.homepageicons {
+margin: 140px ;
+text-align:center;
+
+
+}
+
+.homepageicons p {
+width: 210px;
+text-align: center;
+font-size: 1.0em;
+font-family: 'Open Sans';
+}
+
+.journalfunction {
+float: left;
+text-align: center;
+}
+
+.reviewfuntion   {
+
+ }
+
+.locationfunction {
+float: right;
+}
+
+
+.journalcreate {
+	
+	 border-top-left-radius: 0.3em;
+	border-bottom-left-radius: 0.3em;
+	background-color:#5776ac;
+	text-indent:0px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	color:#fcfcfc;
+	font-family: 'Open Sans';
+	font-size:24px;
+	font-weight:bold;
+	font-style:normal;
+	height:48px;
+	line-height:48px;
+	width:110px;
+	text-decoration:none;
+	text-align:center;
+}
+
+
+.reviewview {
+	
+
+ border-top-right-radius: 0.3em;
+	border-bottom-right-radius: 0.4em;
+	background-color:#5776ac;
+	text-indent:0px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	color:#fcfcfc;
+	font-family: 'Open Sans';
+	font-size:24px;
+	font-weight:bold;
+	font-style:normal;
+	height:48px;
+	line-height:48px;
+	width:110px;
+	text-decoration:none;
+	text-align:center;
+}
+
+.reviewcreate {
+margin-top: 4%;
+ border-top-left-radius: 0.3em;
+	border-bottom-left-radius: 0.3em;
+		background-color:#5776ac;
+	text-indent:0px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	color:#fcfcfc;
+font-family: 'Open Sans';
+	font-size:22px;
+	font-weight:bold;
+	font-style:normal;
+	height:48px;
+	line-height:48px;
+	width:110px;
+	text-decoration:none;
+	text-align:center;
+}
+
+
+.journalview {
+ border-top-right-radius: 0.3em;
+	border-bottom-right-radius: 0.3em;
+	background-color:#5776ac;
+	text-indent:0px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	color:#fcfcfc;
+	font-family: 'Open Sans';
+	font-size:24px;
+	font-weight:bold;
+	font-style:normal;
+	height:48px;
+	line-height:48px;
+	width:110px;
+	text-decoration:none;
+	text-align:center;
+}
+
+.locationview {
+margin-top: 11%;
+ border-top-right-radius: 0.3em;
+	border-bottom-right-radius: 0.3em;
+	 border-top-left-radius: 0.3em;
+	border-bottom-left-radius: 0.3em;
+	background-color:#5776ac;
+	text-indent:0px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	color:#fcfcfc;
+font-family: 'Open Sans';
+	font-size:22px;
+	font-weight:bold;
+	font-style:normal;
+	height:48px;
+	line-height:48px;
+	width:220px;
+	text-decoration:none;
+	text-align:center;
+}
+
+
+@media only screen and (max-device-width: 800px) {
+
+ .locationfunction img{
+        height:auto;
+        width:1000px;
+		margin-left: 30px;
+    }
+}
