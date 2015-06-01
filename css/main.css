@@ -226,12 +226,15 @@ div#profile_page div#bottom {
 	width: 95%;
 } 
 
-img.pieter {
+div#profile_page img.profile_picture {
 	float: left;
 	margin-right: 30px;
 } 
 
-img.world_map {
+div#profile_page button.profilePictureButton{ 
+} 
+
+div#profile_page img.world_map {
 	float: right;
 	margin-right: 50px;
 } 
@@ -240,7 +243,7 @@ div#profile_page div#bottom  p{
 	width: 500px;
 }
 
-div#current_location { 
+div#profile_page div#current_location { 
 	height: 230px;
 	float: right;
 	margin-right: 30px;
