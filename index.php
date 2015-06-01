@@ -19,7 +19,8 @@ include 'header.php';
 
 /*	Main document functionality						*/
 echo "<p>Welcome, " . $_SESSION['fName'] . " " . $_SESSION['lName'] ."!</p>";
-echo "<p>You can create a post <a href='createPost.php'>here</a>.</p>";
+echo "<p><a href='createPost.php'>Create posts here</a>.</p>";
+echo "<p><a href='viewPosts.php'>view your posts here</a>.</p>";
 echo "<p><a href='logout.php'>Click this link to logout.</a></p>";
 
 

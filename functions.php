@@ -75,6 +75,27 @@ function getDocumentTitle(){
 
   }
 
+function getMultipleValuesFromDatabase($table, $column, $options) {
+	$db = new databaseHandler();
+
+	$mysqli = $db->getMysqli();
+
+	$query = "SELECT ". $column ." FROM ". $table ." WHERE ";	 //Add all the options from the options array to the where clause.
+ 	 while($arrayPosition = current($options)) {
+	 	$query .= key($options) . " = '". $arrayPosition . "' AND ";
+ 		next($options);
+ 	 }
+
+ 	 $query .= "'' = ''"; 						//Solves neccesity to count options array for appending AND
+ 	 $res = $mysqli->query($query);
+
+ 	 for ($set = array (); $row = $res->fetch_assoc(); $set[] = $row); //Create a multidimensional array from the resultset.
+
+ 	 $db->close_db();							//Close the database connection of the object
+ 	return $set;								//Return the multidimensional resultset array
+
+}
+
 /* 
 * Function to see if certain value exists in 'table.column'
 * @param String Table 	- The table to be queried
