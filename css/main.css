@@ -164,17 +164,19 @@ body {
 
 /*Profile Page (static) */
 div#profile_page { 
-	margin-left: 20px;;
+	margin-left: 20px;
+	margin-top: 56px;
+	padding: 0px 20px;
 } 
 
 div#profile_page img{ 
-	height: 100%;
+	height: 90%;
 } 
 
 div#profile_page div#top { 
 	height: 230px;
 	width: 95%;
-	margin-bottom: 40px;
+	margin-bottom: 28px;
 } 
 
 div#profile_page div#bottom { 
