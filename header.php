@@ -48,16 +48,17 @@ if($_SESSION['loggedIn'] != true) {
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-		<div id="navigation">
-            <div id="masthead">
-                <img class="logo" src="img/logoroam-white.png" alt="ROAM logo" title="ROAM logo">
-            <div id="primary-menu">
-				<img class="button profilebutton" src="img/profilebutton.png" alt="Profile" title="Profile">
-                <img class="button homebutton" src="img/homebutton.png" alt="Home" title="Home">
-            </div>
+		<div id="wrapper">
+			<div id="navigation">
+	            <div id="masthead">
+	                <a href="index.php"><img class="logo" src="img/logoroam-white.png" alt="ROAM logo" title="ROAM logo"></a>
+	            <div id="primary-menu">
+                    <a href="index.php"><img class="button homebutton" src="img/homebutton.png" alt="Home" title="Home"></a>
+					<a href="profile_page.php"><img class="button profilebutton" src="img/profilebutton.png" alt="Profile" title="Profile"></a> 
+	            </div>
 
-            </div>
+	            </div>
 
-		</div>
-		<div id="container">
-			<div class="content">
+			</div>
+			<div id="container">
+				<div class="content">
