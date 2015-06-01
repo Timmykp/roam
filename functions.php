@@ -88,7 +88,7 @@ function getDocumentTitle(){
 * 											 ]
 *									 $set[1] [
 *											'klant_ID' => 5,
-*											'post_ID' => 3
+*											'post_ID' => 4
 * 											 ]
 * 									etc.
 * Values can be targeted as follows: $set[0]['klant_ID']. Echoing this will print 5 (using the example array given above)
