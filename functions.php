@@ -75,6 +75,24 @@ function getDocumentTitle(){
 
   }
 
+/*
+* Function that retrieves all the rows from the database, using the specified table, column and options.
+* Note: '*' is allowed to be used in case all columns should be targeted
+* @param String table 		- The table of the database where the value is needed
+* @param String column 		- The column of the table where the value is needed
+* @param Array options 		- Specification of the WHERE clause in the SQL statement, entered as an associative array
+* @return Array set 		- A 3-Dimensional array containing all the values of all the targeted rows
+* 							like so: $set[0] [
+*											'klant_ID' => 5,
+*											'post_ID' => 3
+* 											 ]
+*									 $set[1] [
+*											'klant_ID' => 5,
+*											'post_ID' => 3
+* 											 ]
+* 									etc.
+* Values can be targeted as follows: $set[0]['klant_ID']. Echoing this will print 5 (using the example array given above)
+*/
 function getMultipleValuesFromDatabase($table, $column, $options) {
 	$db = new databaseHandler();
 
