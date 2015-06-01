@@ -3,7 +3,7 @@
 	<div class="container">
 	
     <div class="col span_1_of_3 profile1">
-	<a href="#"><img src="journal-icon.png"></a>	
+	<a href="#"><img src="/img/journal-icon.png"></a>	
 	<center><h2> Journal </h2></center>
 		<p> Write down your adventures 
 			and share it however you like,
@@ -15,7 +15,7 @@
 		
 		
     <div class="col span_1_of_3 profile2">
-	<a href="#"><img src="location-icon.png"></a>	
+	<a href="#"><img src="/img/location-icon.png"></a>	
 	<center><h2> Location </h2></center>
 	<p>	Find restautant, hostels,
 		activities or even other
@@ -27,7 +27,7 @@
 			
 			
     <div class="col span_1_of_3 profile3">
-	<a href="#"><img src="review-icon.png"></a>	
+	<a href="#"><img src="/img/review-icon.png"></a>	
 	<center><h2> Review </h2></center>
 	<p>	Read or write reviews 
 		nearby hostels, restaurants
