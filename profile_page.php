@@ -20,14 +20,14 @@ include 'header.php';
 
 /*	Main document functionality						*/ ?>
 <div id="profile_page">
-	<div id="top">
+		<div id="top">
 		<img src="img/pieter.jpg" class="pieter" alt="Profile Picture">
 		<img src="img/world_map.jpg" class="world_map" alt="Visited countries">
 		<h3><?php echo $_SESSION['fName'] . " " . $_SESSION['lName']?></h3>
-		<p>
-			The Netherlands <br>
-			11-09-1992 <br>
-			Sex: Male 
+		<p class="user_information">
+			<?php echo ucfirst(getSingleValueFromDatabase('account', 'klant_nationaliteit', array('klant_ID' => $_SESSION['id'] ))) ?><br>
+			<?php echo getSingleValueFromDatabase('account', 'klant_geboortedatum', array('klant_ID' => $_SESSION['id'] )) ?><br>
+			Sex: <?php echo getSingleValueFromDatabase('account', 'klant_geslacht', array('klant_ID' => $_SESSION['id'] )) ?><br>
 		</p>
 	</div>
 	<div id="bottom">
@@ -36,7 +36,7 @@ include 'header.php';
 			<img src="img/rome.png" class="rome" alt="current location">
 		</div>
 		<h3>About me</h3>
-		<p>I am Pieter de Graaf, a travelling student. Look at my current location and contact me if you are nearby!</p>
+		<p><?php echo getSingleValueFromDatabase('profiel', 'klant_bio', array('klant_ID' => $_SESSION['id'] )) ?></p>
 	</div>
 </div>
 <?php
