@@ -88,7 +88,7 @@ function getDocumentTitle(){
 * 											 ]
 *									 $set[1] [
 *											'klant_ID' => 5,
-*											'post_ID' => 3
+*											'post_ID' => 4
 * 											 ]
 * 									etc.
 * Values can be targeted as follows: $set[0]['klant_ID']. Echoing this will print 5 (using the example array given above)
@@ -213,9 +213,9 @@ function registerAccount($fName, $lName, $hashedPassword, $email, $birthdate, $g
 /*
 * This function will create a default profile for a new user.
 * This function is used during account registration, so that the new
-* user will also get a row in the profiel database table.
+* user will also get a row in the profile database table.
 * @param String email 	- The email associated with the account that needs a profile added
-* @return Boolean 		- Returns wether the query was executed succesfully or not
+* @return Boolean 		- Returns whether the query was executed successfully or not
 */
 function createProfile($email){
 

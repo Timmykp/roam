@@ -97,12 +97,16 @@ body {
     width: 40px;
     position: absolute;
     top: 12px;
-    transition: -webkit-filter 0.5s, filter 0.5s;
+/*    transition: -webkit-filter 0.5s, filter 0.5s;*/
+    transition: 0.7s ease-in-out;
 }
 
 .button:hover {
+/*
     -webkit-filter: invert(1);
     filter: invert(1);
+*/
+    transform: rotate(360deg);
 }
 
 .profilebutton {
@@ -200,47 +204,75 @@ body {
     width: 100%;
 }
 
-/*Profile Page (static) */
+/*Profile Page */
 div#profile_page { 
-	margin-left: 20px;
+	width: 94%;
+	margin-left: 10px;
+	margin-top: 10px;
+	padding: 10px;
+	clear: both;
+} 
+
+div#profile_page img{ 
+	height: 100%;
+} 
+
+div#profile_page div#profile_header { 
+	height: 320px;
+	width: 100%;
+} 
+
+div#profile_page div#profile_header img.header_picture { 
+	width: 100%;
+	z-index: -1;
+} 
+
+div#profile_page div#profile_top { 
+	height: 220px;
+}
+
+div#profile_page div#profile_content { 
+	height: 220px;
+	width: 95%;
+	padding: 28px 30px;
+	height: 100%;
+} 
+
+div#profile_page div#profile_top img.profile_picture {
+	float: left;
+	margin-right: 30px;
+	border-style: solid;
+} 
+
+div#profile_page img.world_map {
+	float: right;
+} 
+
+div#profile_page div#current_location { 
+	height: 230px;
+	float: right;
+	clear: both;
+} 
+
+/*edit_profile_page  */
+div#edit_profile_page { 
 	margin-top: 56px;
 	padding: 0px 20px;
 } 
 
-div#profile_page img{ 
-	height: 90%;
-} 
-
-div#profile_page div#top { 
-	height: 230px;
-	width: 95%;
-	margin-bottom: 28px;
-} 
-
-div#profile_page div#bottom { 
-	height: 230px;
-	width: 95%;
-} 
-
-img.pieter {
+div#edit_profile_page div#account { 
 	float: left;
-	margin-right: 30px;
+	margin-right: 60px;
+}	
+
+div#edit_profile_page form div#account p {
+	margin-bottom: 5px;
 } 
 
-img.world_map {
-	float: right;
-	margin-right: 50px;
+div#edit_profile_page form div#profile p {
+	margin-bottom: 5px;
 } 
 
-div#profile_page div#bottom  p{ 
-	width: 500px;
-}
-
-div#current_location { 
-	height: 230px;
-	float: right;
-	margin-right: 30px;
-} 
 /* Register pagina */
 #registerForm {
 	font-family: 'Open Sans';
