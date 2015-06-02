@@ -36,7 +36,7 @@
 		or activities.
 			</p></div>
 			<div class="home-button-container">
-				<a href="#" class="reviewcreate">Create </a> <a href="#" class="reviewview">View </a>
+				<a href="" class="reviewcreate">Create </a> <a href="#" class="reviewview">View </a>
 			</div>
 		</div>
 

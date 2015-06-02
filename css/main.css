@@ -270,32 +270,31 @@ input[type="submit"] {
 
 body {}
 
-
+/* homepage */
 
 .journalcreate {
 	
 	display: inline-block;
-	 border-top-left-radius: 0.3em;
+	border-top-left-radius: 0.3em;
 	border-bottom-left-radius: 0.3em;
 	background-color:#5776ac;
 	text-indent:0px;
 	border:1px solid #ffffff;
-
 	color:#fcfcfc;
 	font-family: 'Open Sans';
-	font-size:24px;
+	font-size:20px;
 	font-weight:bold;
 	font-style:normal;
 	height:48px;
 	line-height:48px;
-	width:81px;
+	width:80px;
 	text-decoration:none;
 	text-align:center;
 }
 
 
 .journalview {
- border-top-right-radius: 0.3em;
+	border-top-right-radius: 0.3em;
 	border-bottom-right-radius: 0.3em;
 	background-color:#5776ac;
 	text-indent:0px;
@@ -303,20 +302,20 @@ body {}
 	display:inline-block;
 	color:#fcfcfc;
 	font-family: 'Open Sans';
-	font-size:24px;
+	font-size:20px;
 	font-weight:bold;
 	font-style:normal;
 	height:48px;
 	line-height:48px;
-	width:81px;
+	width:80px;
 	text-decoration:none;
 	text-align:center;
 }
 
 .reviewview {
 	
-display: inline-block;
- border-top-right-radius: 0.3em;
+	display: inline-block;
+	border-top-right-radius: 0.3em;
 	border-bottom-right-radius: 0.4em;
 	background-color:#5776ac;
 	text-indent:0px;
@@ -324,12 +323,12 @@ display: inline-block;
 	display:inline-block;
 	color:#fcfcfc;
 	font-family: 'Open Sans';
-	font-size:24px;
+	font-size:20px;
 	font-weight:bold;
 	font-style:normal;
 	height:48px;
 	line-height:48px;
-	width:81px;
+	width:80px;
 	text-decoration:none;
 	text-align:center;
 }
@@ -337,20 +336,20 @@ display: inline-block;
 .reviewcreate {
 
 
- border-top-left-radius: 0.3em;
+	border-top-left-radius: 0.3em;
 	border-bottom-left-radius: 0.3em;
-		background-color:#5776ac;
+	background-color:#5776ac;
 	text-indent:0px;
 	border:1px solid #ffffff;
 	display:inline-block;
 	color:#fcfcfc;
-font-family: 'Open Sans';
-	font-size:22px;
+	font-family: 'Open Sans';
+	font-size:20px;
 	font-weight:bold;
 	font-style:normal;
 	height:48px;
 	line-height:48px;
-	width:81px;
+	width:80px;
 	text-decoration:none;
 	text-align:center;
 }
@@ -380,35 +379,33 @@ font-family: 'Open Sans';
 
 @media screen and (max-width: 1024px) {
 	.home-image-container {
-		width: 100%;
+	width: 60%;
 	}
 }
 
 .home-image-container  img{
 	width: 100%;
 	overflow: hidden;
-	
-	
 }
 
 .locationview {
 	
- border-top-right-radius: 0.3em;
+	border-top-right-radius: 0.3em;
 	border-bottom-right-radius: 0.3em;
-	 border-top-left-radius: 0.3em;
+	border-top-left-radius: 0.3em;
 	border-bottom-left-radius: 0.3em;
 	background-color:#5776ac;
 	text-indent:0px;
 	border:1px solid #ffffff;
 	display:inline-block;
 	color:#fcfcfc;
-font-family: 'Open Sans';
+	font-family: 'Open Sans';
 	font-size:22px;
 	font-weight:bold;
 	font-style:normal;
 	height:48px;
 	line-height:48px;
-	width:150px;
+	width:160px;
 	text-align: center;
 	text-decoration:none;
 	text-align:center;
@@ -423,5 +420,5 @@ height: 150px !important;
 }
 
 .home-button-container { 
-
+padding: em;
 }
