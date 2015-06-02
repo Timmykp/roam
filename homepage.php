@@ -11,7 +11,7 @@
 			people near your location.	
 		</p></div>
 		<div class="home-button-container">
-			<a href="#" class="journalcreate">Create </a> <a href="#" class="journalview">View </a>
+			<a href="#" class="create">Create </a> <a href="#" class="view">View </a>
 		</div>
 		</div>
 		
@@ -24,7 +24,8 @@
 		location.
 			</p></div>
 			<div class="home-button-container">
-				<a href="#" class="locationview">View </a>
+
+				<a href="" class="create">Create </a> <a href="#" class="view">View </a>
 			</div>
 		</div>
 		
@@ -36,7 +37,7 @@
 		or activities.
 			</p></div>
 			<div class="home-button-container">
-				<a href="" class="reviewcreate">Create </a> <a href="#" class="reviewview">View </a>
+			<a href="#" class="locationview">View </a>
 			</div>
 		</div>
 
